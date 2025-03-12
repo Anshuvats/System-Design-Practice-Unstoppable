@@ -17,6 +17,13 @@ public class SharedResourcesPractice {
             threads[i].start();
         }
 
+        try{
+           for(Thread thread:threads){
+               thread.join();
+           }
+        }catch(InterruptedException e){
+            e.printStackTrace();
+        }
 
     }
     static class Worker implements Runnable{
